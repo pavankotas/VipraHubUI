@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -32,11 +31,9 @@
     "@ng-bootstrap/ng-bootstrap": "^4.1.0",
     "angular": "^1.7.7",
     "angular-font-awesome": "^3.1.2",
-    "angularfire2": "^5.1.1",
     "bootstrap": "^4.3.1",
     "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
-    "crypto": "^1.0.1",
     "express": "^4.16.4",
     "file-saver": "^2.0.1",
     "firebase": "^5.8.5",
