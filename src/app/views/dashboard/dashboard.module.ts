@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import {MatButtonModule} from "@angular/material";
+import {MatButtonModule} from '@angular/material';
 import { OrderPipe } from 'ngx-order-pipe';
 import {Router} from '@angular/router';
 
