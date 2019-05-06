@@ -1,0 +1,91 @@
+<style>
+  .checked {
+    color: orange;
+  }
+</style>
+<!--Model Overview-->
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Experiment</h5>
+    <div class="pull-right">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+    </div>
+    <h6 class="card-subtitle mb-2 text-muted">{{modelObj.categoryID}}</h6>
+    <p class="card-text"></p>
+    <button mat-flat-button style="background-color: #1c214bad;color: white" (click)="downloadFilesInZip()" target="_blank"> <i class="fa fa-download"></i> Download</button>
+  </div>
+</div>
+<!--Model detailed view-->
+<div>
+  <!-- Nav tabs -->
+  <tabset *ngIf="modelObj">
+    <tab heading="OVERVIEW">
+      <br/>
+      <div style="padding-left: 20px">
+        <p>Model Name : {{modelObj.model_name}}</p>
+        <p>Author : {{modelObj.Author}}</p>
+        <p>Category : {{modelObj.categoryID}}</p>
+        <p>Framework : {{modelObj.framework}}</p>
+        <p>Size : {{modelObj.size}}</p>
+        <p>Input Tensors : {{modelObj.InputTensors}}</p>
+        <p>Output Tensors : {{modelObj.OutputTensor}}</p>
+        <p>Optimizer : {{modelObj.Optimizer}}</p>
+        <p>Loss Function : {{modelObj.LossFunction}}</p>
+        <p>Accuracy Value : {{modelObj.AccuracyValue}}</p>
+        <p>Loss Value : {{modelObj.LossValue}}</p>
+        <p>Year : {{modelObj.Year}}</p>
+      </div>
+      <!--<div>
+        <h4>DESCRIPTION</h4>
+        <p>{{modelObj.Overview.DESCRIPTION}}</p>
+      </div>
+       <div>
+         <h4>APPLICATION</h4>
+         <p>{{modelObj.Overview.APPLICATION}}</p>
+       </div>
+       <div>
+         <h4>TASK</h4>
+         <p>{{modelObj.Overview.TASK}}</p>
+       </div>
+       <div>
+         <h4>TYPE</h4>
+         <p>{{modelObj.Overview.TYPE}}</p>
+       </div>
+       <div>
+         <h4>ARCHITECTURE</h4>
+         <p>{{modelObj.Overview.ARCHITECTURE}}</p>
+       </div>-->
+    </tab>
+    <tab heading="PUBLICATION">
+      <!-- <div>
+         <h4>TITLE</h4>
+         <p>{{modelObj.Publication.TITLE}}</p>
+       </div>
+       <div>
+         <h4>AUTHOR</h4>
+         <p>{{modelObj.Publication.AUTHORS}}</p>
+       </div>
+       <div>
+         <h4>ABSTRACT</h4>
+         <p>{{modelObj.Publication.ABSTRACT}}</p>
+       </div>
+       <div>
+         <h4>YEAR</h4>
+         <p>{{modelObj.Publication.YEAR}}</p>
+       </div>-->
+    </tab>
+    <tab heading="ARCHITECTURE">
+      <img [src]="modelObj.URL"/>
+    </tab>
+    <tab heading="TEST">
+      <h6>Comming Soon....</h6>
+    </tab>
+    <tab heading="COMMENTS">
+      <h6>Comming Soon....</h6>
+    </tab>
+  </tabset>
+</div>

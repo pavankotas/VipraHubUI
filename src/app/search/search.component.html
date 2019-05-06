@@ -1,0 +1,37 @@
+<app-home-header></app-home-header>
+<div class="container topPadding contentBg">
+  <div class="row colorDarkBlue">
+    <div class="col-10">
+      <h6><u>Search Results</u></h6>
+    </div>
+    <div class="col-2">
+      <div ngbDropdown class="rounded text-right" placement="bottom-right">
+        <button class="btn text-white backColorDarkBlue" id="dropdownBasic1" ngbDropdownToggle>Sort By</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem (click)="setOrder('AccuracyValue')">Accuracy</button>
+          <button ngbDropdownItem (click)="setOrder('Year')">Year</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="style1">
+  <div class="row p-5">
+    <div  class="col-sm m-4" *ngFor="let modelData of (vipraService.searchResults | orderBy:order )  " >
+      <div class="card features rounded p-4" (click)="viewModel(modelData._id)">
+        <div class="card-body">
+          <h5 class="p-1">{{modelData.model_name}}</h5>
+          <div class="row p-2">
+            <div class="col-md-auto">
+              <b>Author</b> :  {{modelData.Author}}<br>
+              <b>Category</b> : {{modelData.categoryID}}<br>
+              <b>Accuracy</b> : {{modelData.AccuracyValue}}<br>
+              <b>Optimizer</b> : {{modelData.Optimizer}}<br>
+              <b>Framework</b> : {{modelData.framework}}<br>
+              <b>Year</b> : {{modelData.Year}}<br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

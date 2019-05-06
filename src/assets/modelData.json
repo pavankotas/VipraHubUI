@@ -1,0 +1,108 @@
+{
+  "models": [{
+      "model_name": "CNN011019-220151",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "2",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.46875",
+      "LossValue": "0.7201308608055115"
+    },
+    {
+      "model_name": "CNN011019-220728",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "3",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.625",
+      "LossValue": "0.6705620884895325"
+    },
+   {
+      "model_name": "CNN011019-221140",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "4",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.59375",
+      "LossValue": "0.7149171829223633"
+    },
+    {
+      "model_name": "CNN011019-221632",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "5",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.4375",
+      "LossValue": "0.7406877279281616"
+    },
+   {
+      "model_name": "CNN011019-222102",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "6",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.53125",
+      "LossValue": "0.7282862663269043"
+    },
+    {
+      "model_name": "CNN011019-222647",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "7",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.34375",
+      "LossValue": "0.7451262474060059"
+    },
+     {
+      "model_name": "CNN011019-223241",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "8",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.4375",
+      "LossValue": "0.7010642290115356"
+    },
+
+    {
+      "model_name": "CNN011019-223859",
+      "framework": "keras 2.2.2",
+      "size": "9793.952 kilobytes",
+      "epochs": "9",
+      "layersCount": "7",
+      "InputTensors": "(None, 64, 64, 3)",
+      "OutputTensor": "(None, 1)",
+      "Optimizer": "Adam",
+      "LossFunction": "binary_crossentropy",
+      "AccuracyValue": "0.53125",
+      "LossValue": "0.6884108781814575"
+    }
+  ]
+}

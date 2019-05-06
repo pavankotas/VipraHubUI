@@ -1,0 +1,106 @@
+<app-home-header></app-home-header>
+<header class="deepL text-white">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 p-0">
+        <h1>Hub of Deep Learning Models. Deploy, Test and Visualize your models</h1>
+        <div class="col-md-10 p-0">
+          <form>
+            <div class="form-row">
+              <div class="col-12 p-3">
+                <a href="#/registration" class="btn btn-success text-white">Get Started</a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-6 p-0">
+        <div class="card">
+          <div class="card-body">
+            <carousel [interval]="3000">
+              <slide>
+                <img src="../../assets/image/artificial-intelligence-deep-learning-neural-networks-ai.jpg" alt="First slide" style="display: block; width: 100%; height:100%">
+              </slide>
+              <slide>
+                <img src="../../assets/image/deep_learning.jpg" alt="Second slide" style="display: block; width: 100%; height:100%">
+              </slide>
+              <slide>
+                <img src="../../assets/image/PubReady_Pub_21015_HPC_DeepLearning_ResourceLandscape_3_2x.md.jpg" alt="Third slide" style="display: block; width: 100%; height:100%">
+              </slide>
+            </carousel>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="contentBg">
+  <div class="container">
+    <div class="colorDarkBlue"><u><h3>Browse by Categories</h3></u></div>
+    <div class="row">
+      <div  class="col-3 p-3" *ngFor="let categories of listOfCategories">
+        <div class="category features">
+          <a (click)="getModels(categories)">
+          <div class="category rounded card-body">
+              {{categories.name}}
+          </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+      </div>
+    </div>
+      <div class="row m-5">
+        <div  class="col-sm col-sm-4 mt-2 mr-0" *ngFor="let modelData of (listOfModels | orderBy: '-AccuracyValue') | slice:0:3 " >  <!--| orderBy: '-AccuracyValue'-->
+          <div class="card features rounded p-4 fixedHeightHome">
+            <div class="card-body">
+              <h5 class="p-1">{{modelData.model_name}}</h5>
+              <div class="row p-2">
+                <div class="col-md-auto">
+                  <b>Author</b> : {{modelData.Author}} <br>
+                  <b>Category</b> : {{modelData.categoryID}}<br>
+                  <b>Accuracy</b> : {{modelData.AccuracyValue}}<br>
+                  <b>Optimizer</b> : {{modelData.Optimizer}}<br>
+                  <b>Framework</b> : {{modelData.framework}}<br>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row float-right backColorDarkBlue">
+      <button type="submit" class="btn btn-sm text-white btn-lg active" (click)="goToSearch()">Browse for more Models</button>
+    </div>
+  </div>
+</div>
+<div class="contentBg">
+  <div class="container">
+    <div class="colorDarkBlue bg-gradient-light"><u><h3>Why VipraHub?</h3></u></div>
+    <div class="row mt-5">
+      <div class="col-3 text-center">
+        <i class="fa fa-rocket fa-5x"></i><br/>
+        <div class="colorDarkBlue p-1"><b>Host your model</b></div><br/>
+        <div class="text-darkBlue">Deploy your model online</div> <br/>
+      </div>
+      <div class="col-3 text-center">
+        <i class="fa fa-tasks fa-5x"></i><br/>
+        <div class="colorDarkBlue p-1"><b>Test your model</b></div><br/>
+        <div class="text-darkBlue">Test your model on VipraHub and allow others to test and rate your model</div> <br/>
+      </div>
+      <div class="col-3 text-center">
+        <i class="fa fa-eye fa-5x"></i><br/>
+        <div class="colorDarkBlue p-1"><b>Visualization</b></div><br/>
+        <div class="text-darkBlue">Great Visualization for models and its metadata</div><br/>
+      </div>
+      <div class="col-3 text-center">
+        <i class="fa fa-search fa-5x"></i><br/>
+        <div class="colorDarkBlue p-1"><b>Search other model</b></div><br/>
+        <div class="text-darkBlue">Browse models from a list of different kinds of deep learning categories and sort it based on accuracy and rating</div><br/>
+      </div>
+    </div>
+  </div>
+</div>
+<app-home-footer></app-home-footer>

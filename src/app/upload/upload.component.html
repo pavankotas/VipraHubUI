@@ -1,0 +1,117 @@
+<div class="container" style="width:900px;">
+  <div ng2FileDrop
+       [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+       (fileOver)="fileOverBase($event)"
+       [uploader]="uploader">
+
+
+    <!--Close button-->
+    <button type="button" mat-mini-fab color="warn" class="float-right"
+            (click)="dialogRef.close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+
+    <div> <h3>Upload Files</h3></div>
+    <div class="row col-md-12">
+      <div class="col-md-4 form-group">
+        <label>Category ID: </label>
+        <!-- (change)="filterForeCategoryIds($event.target.value)" -->
+        <select [(ngModel)]="selectedcategory" class="form-control">
+          <option >select</option>
+          <option *ngFor="let category of categories" value={{category._id}}>
+            {{category.name}}
+          </option>
+        </select>
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Model name: </label>
+        <input type="text" class="form-control" [(ngModel)]="modelname" placeholder="Category model name">
+      </div>
+      <div class="col-md-4 form-group">
+        <label>Experiment: </label>
+        <input type="text"  class="form-control" [(ngModel)]="experiment" placeholder="Experiment name">
+      </div>
+    </div>
+    <div class="col-md-6 form-group">
+
+    </div>
+    <br>
+    <div class=" row col-md-12">
+      <div class="col-md-9">
+        <h3>Upload queue</h3>
+        <p>File(s) Selected: {{ uploader?.queue?.length }}</p>
+      </div>
+      <div class="col-md-3 pull-right">
+         <input type="file" ng2FileSelect [uploader]="uploader" multiple [disabled]="IsFilesUploadedSuccessfully"/>
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th width="50%">Name</th>
+          <th>Size</th>
+          <th>Progress</th>
+          <th>Status</th>
+          <!-- <th>Actions</th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of uploader.queue">
+          <td><strong>{{ item.file.name }}</strong></td>
+          <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+          <td>
+            <div class="progress" style="margin-bottom: 0;">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+            </div>
+          </td>
+          <td class="text-center">
+            <span *ngIf="item.isSuccess"><i class="fa fa-check"></i></span>
+            <span *ngIf="item.isCancel"><i class="fa fa-ban"></i></span>
+            <span *ngIf="item.isError"><i class="fa fa-times"></i></span>
+          </td>
+          <td nowrap>
+            <!-- <button type="button" class="btn btn-success btn-xs"
+                    (click)="item.upload();" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                <span class="fa fa-upload"></span> Upload
+            </button> -->
+            <!-- <button type="button" class="btn btn-warning btn-xs"
+                    (click)="item.cancel()" [disabled]="!item.isUploading">
+                <span class="fa fa-ban"></span> Cancel
+            </button> -->
+            <button type="button" class="btn btn-danger btn-xs"
+                    (click)="item.remove()">
+              <span class="fa fa-trash"></span> Remove
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <hr>
+        <div>
+          Total progress:
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+          </div>
+          <hr>
+        </div>
+        <div class="example-button-row">
+          <button type="button" mat-raised-button color="primary"
+                  (click)="checkIfModelNameIsAlreadyPresent()" [disabled]="!uploader.getNotUploadedItems().length">
+            <i class="fa fa-upload"></i> Upload all
+          </button>
+          <button type="button"  mat-raised-button color="accent"
+                  (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+            <i class="fa fa-ban"></i> Cancel all
+          </button>
+          <button type="button" mat-raised-button color="warn"
+                  (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+            <i class="fa fa-trash"></i> Remove all
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

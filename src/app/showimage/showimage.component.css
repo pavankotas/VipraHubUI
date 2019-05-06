@@ -1,0 +1,60 @@
+.deepL
+{
+  position: relative;
+  background: #1c214b;
+  background-size: cover;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.primary-btn.span
+{
+  color: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.crousal-area
+{
+  background: #f9f9ff;
+  padding: 100px 0;
+}
+
+
+.owl-carousel-holder{
+  width:100%;
+  float: left;
+}
+
+.carousel-section{
+  width: 100%;
+  height: 400px;
+  float: left;
+  margin-top: 60px;
+}
+
+.slider-image-section{
+  width: 100%;
+  height:480px;
+  float: left;
+}
+
+.card.features
+{
+  border: 1px;
+  border-radius: 3px;
+  box-shadow: 0px 5px 8px 2px #1c214b;
+  transition: all 0.3s ease;
+}
+
+.category
+{
+  background-color: #1c214b;
+  color:white;
+}
+
+.category.features
+{
+  border: 1px;
+  border-radius: 3px;
+}

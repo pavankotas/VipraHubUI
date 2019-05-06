@@ -1,0 +1,147 @@
+<app-home-header></app-home-header>
+<nav role="navigation">
+  <div style="padding-left: 50px; font-size: 100px;">
+    <i class="fa fa-user fa-10x"></i> </div>
+  <div style="padding-left: 18px">
+    <ul style="align-content: center">
+      <li style="font-size: 21px">{{loginsuersInfo.userInfo.fullName}}</li>
+      <li style="font-size: 13px;font-weight: 600;">{{loginsuersInfo.userInfo.emailID}}</li>
+      <li><button  class="btn btn-primary btn-info" (click)="openUploadDownloadComponent()">Upload Model
+        <i class="fa fa-upload"></i> </button></li>
+      <li><button  class="btn btn-primary btn-danger">Delete Account
+        <i class="fa fa-trash"></i> </button></li>
+      <li><button  class="btn btn-primary btn-info">Change password
+        <i class="fa fa-refresh"></i> </button></li>
+      <li>
+        <div class="flipswitch">
+          <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
+          <label class="flipswitch-label" for="fs">
+            <div class="flipswitch-inner"></div>
+            <div class="flipswitch-switch"></div>
+          </label>
+        </div> </li>
+    </ul>
+  </div>
+</nav>
+
+<main role="main">
+  <section class="panel important">
+    <h2>Welcome to Your Dashboard </h2>
+  </section>
+  <section class="panel">
+    <!-- STATISTIC-->
+    <section class="statistic statistic2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3" (click)="viewModels()">
+            <div class="statistic__item statistic__item--green">
+              <h2 class="number">300</h2>
+              <span class="desc"> Uploads </span>
+              <div class="icon">
+                <i class="fa fa-upload"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="statistic__item statistic__item--orange">
+              <h2 class="number">600</h2>
+              <span class="desc">Comments</span>
+              <div class="icon">
+                <i class="fa fa-comments"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="statistic__item statistic__item--blue">
+              <h2 class="number">400</h2>
+              <span class="desc">Downloads</span>
+              <div class="icon">
+                <i class="fa fa-download"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="statistic__item statistic__item--red">
+              <h2 class="number">4.5/5</h2>
+              <span class="desc">Rating</span>
+              <div class="icon">
+                <i class="fa fa-star-half-empty"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END STATISTIC-->
+  </section>
+  <section class="panel">
+    <div class="row">
+      <div class="col-md-8 col-lg-6">
+    <h2>Statistics</h2>
+    <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [colors]="chartColors"
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 col-lg-6">
+        <h2>Recent Activities</h2>
+        <div>
+         <ul>
+           <li><i class="fa fa-eye"></i><span>  Viewed Models </span></li>
+           <li><i class="fa fa-flask"></i> <span> Done Experiments on model 2 </span></li>
+           <li><i class="fa fa-user"></i><span>  Updated Profile</span></li>
+           <li><i class="fa fa-comments"></i><span>  Viewed Comments</span></li>
+         </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--  <section>
+    <div class="col-md-8 col-lg-6">
+      <h2>Detailed Model Information</h2>
+    </div>
+    <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Classification</th>
+      <th scope="col">Model Name</th>
+      <th scope="col">Ratings</th>
+      <th scope="col">Downloads</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Image Classification</td>
+      <td>Model1</td>
+      <td>3</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Image Classification</td>
+      <td>Model2</td>
+      <td>4</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Image Classification</td>
+      <td>Model3</td>
+      <td>4.5</td>
+      <td>410</td>
+    </tr>
+    </tbody>
+  </table>
+  </section>-->
+</main>
