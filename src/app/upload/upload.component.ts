@@ -1,11 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FileUploader, FileItem } from 'ng2-file-upload';
 import {  MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FilesService } from '../files.service';
 import { ViprahubService } from '../viprahub.service';
 import { ModelsService } from '../models.service';
 import { LoggedinUserInfoService } from '../services/loggedin-user-info.service';
-import { Observable } from 'rxjs';
+import {FileItem, FileUploader} from 'ng2-file-upload';
 
 @Component({
   selector: 'app-upload-download',
@@ -69,7 +68,7 @@ export class UploadDownloadComponent implements OnInit {
 
       this.uploader.onSuccessItem = (item: FileItem, response: string) => {
         const res = JSON.parse(response); // success server response
-       if(/_metadata.txt/.test(item.file.name)){
+       if(/_metadata.txt/.test(item.file.name)) {
           this.metaDataFileID = res.file_id;
        }
         //console.log(this.selectedcategory);

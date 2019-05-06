@@ -31,7 +31,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { OrderModule } from 'ngx-order-pipe';
 import {HttpClientModule} from '@angular/common/http';
 import {UploadDownloadComponent} from './upload/upload.component';
-import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { DialogService } from './dialog.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -78,8 +77,6 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     HomeHeaderComponent,
     HomeFooterComponent,
     UploadDownloadComponent,
-    FileSelectDirective,
-    FileDropDirective,
     ShowImageComponent,
     ViewmodeldashboardComponent,
     ProgressSpinnerDialogComponent
