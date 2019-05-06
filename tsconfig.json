@@ -21,6 +21,9 @@
         "./node_modules/jszip/dist/jszip.js"
       ]
     },
+    "exclude": [
+      "src/**/*"
+    ],
     "lib": [
       "es2018",
       "dom"
